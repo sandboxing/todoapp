@@ -1,12 +1,12 @@
 dependencies:
   pre:
     - echo y | android update sdk --no-ui --all --filter "tools,platform-tools,android-23,extra-android-m2repository,sys-img-armeabi-v7a-android-18"
+
 test:
   pre:
     - echo no | android create avd --force -n test -t android-18 --abi armeabi-v7a
     - emulator -avd test -no-audio -no-window &
-    - android-wait-for-emulator
-    - adb shell input keyevent 82
+    - circle-android wait-for-boot
   override:
     - ./gradlew test
     - ./gradlew connectedAndroidTest
