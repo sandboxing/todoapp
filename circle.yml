@@ -5,7 +5,9 @@ dependencies:
 test:
   pre:
     - echo no | android create avd --force -n test -t android-18 --abi armeabi-v7a
-    - emulator -avd test -no-audio -no-window &
+    - emulator -avd circleci-android23 -no-audio -no-window:
+        background: true
+        parallel: true
     - circle-android wait-for-boot
   override:
     - ./gradlew test
