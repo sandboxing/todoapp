@@ -12,9 +12,9 @@ jdk:
   - oraclejdk8
 
 script:
-  - ./gradlew clean check -Dpre-dex=false
+  - ./gradlew clean assemble -Dpre-dex=false
+  - ./gradlew app:test
   - ./gradlew lint
-  - ./gradlew build connectedCheck
 
 notifications:
   email: false
