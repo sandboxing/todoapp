@@ -222,7 +222,7 @@ public class TasksScreenTest {
     }
 
     @Test
-    public void showActiveTasks() {
+public void showActiveTasks() {
         // Add 2 active tasks
         createTask(TITLE1, DESCRIPTION);
         createTask(TITLE2, DESCRIPTION);
