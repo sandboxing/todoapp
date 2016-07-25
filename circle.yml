@@ -8,7 +8,7 @@ test:
     - ./gradlew clean assemble -Dpre-dex=false --console=plain
 
     # Execute Unit Tests
-    - ./gradlew app:test --console=plain
+    - ./gradlew test --console=plain
 
     - ./gradlew lint --console=plain
 
