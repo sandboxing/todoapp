@@ -67,9 +67,8 @@ public class TasksPresenterTest {
         mTasksPresenter = new TasksPresenter(mTasksRepository, mTasksView);
 
         // The presenter won't update the view unless it's active.
-//        when(mTasksView.isActive()).thenReturn(true);
-        when(mTasksView.isActive()).thenReturn(false);
-
+        when(mTasksView.isActive()).thenReturn(true);
+      
         // We start the tasks to 3, with one active and two completed
         TASKS = Lists.newArrayList(new Task("Title1", "Description1"),
                 new Task("Title2", "Description2", true), new Task("Title3", "Description3", true));
